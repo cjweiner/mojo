@@ -6,3 +6,60 @@
   width: 96px;
   height: 96px;
 }
+
+.bar.bar-positive, .bar-header{
+    background-color: #FFA24B;
+    border-color: #FFA24B;
+}
+
+.button.button-positive{
+    background: none;
+}
+
+.bar .title{
+    color:#fff;
+}
+
+.bar .button.button-clear{
+    color:#fff;
+    font-weight:normal;
+    font-size:17px;
+}
+
+.item .icon
+{
+    font-size:30px;
+    color: #E82C0C;
+}
+
+.item .title
+{
+    font-size: 30px;
+    color:grey;
+}
+
+.item .item-button-left
+{
+    padding-left: 0px;
+    float:left;
+}
+.item .item-button-right
+{
+    padding-right: 0px;
+    float:right;
+}
+
+.item .ion-chevron-right:before
+{
+    font-size:18px;
+    color:grey;
+}
+.toggle input:checked + .track
+{
+    background-color: #FFA24B;
+    border-color: #FFA24B;
+}
+
+.invis{
+    display: none;
+}

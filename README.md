@@ -1,6 +1,4 @@
-ionic-angular-cordova-seed
+mojo
 ==========================
 
-The perfect starting point for an Ionic project.
-
-- [Ionic Tutorials](http://ionicframework.com/tutorials/)
+A simple iOS/Android app for motivating you throughout your day.
