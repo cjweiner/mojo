@@ -28,8 +28,8 @@
 
 .item .icon
 {
-    font-size:30px;
-    color: #E82C0C;
+    font-size:40px;
+    color: #4BDAFF;
 }
 
 .item .title
@@ -60,6 +60,17 @@
     border-color: #FFA24B;
 }
 
+.item-input-inline-flex{
+    display: inline-flex;;
+}
+
 .invis{
     display: none;
+}
+
+.float-right{
+    float:right;
+}
+.float-left{
+    float:left;
 }

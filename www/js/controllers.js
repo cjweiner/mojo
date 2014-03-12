@@ -7,6 +7,7 @@ angular.module('mojo.controllers', [])
             if(device.platform === 'iOS'){
                 StatusBar.overlaysWebView(true);
             }
+            //used for testing remove from
             window.localStorage.clear();
             var alarms = [
                 {
@@ -20,7 +21,7 @@ angular.module('mojo.controllers', [])
                 {
                     id:2,
                     time: '6:35 am',
-                    label:'SuperAwesomeGymTime',
+                    label:'Super Awesome Gym Time',
                     repeat:'never',
                     active:true
                 },
@@ -53,7 +54,7 @@ angular.module('mojo.controllers', [])
             window.localStorage.setItem("alarms",jsonString);
         });
 })
-.controller('AlarmsCtrl', function($scope, $state, $ionicSideMenuDelegate, AlarmsSvc) {
+.controller('AlarmsCtrl', function($scope, $state, AlarmsSvc) {
 
         $scope.alarms = eval(AlarmsSvc.getAlarms());
 
@@ -77,8 +78,55 @@ angular.module('mojo.controllers', [])
             }
         ];
 })
-.controller('AddAlarmCtrl',function($scope){
+.controller('AddAlarmCtrl',function($scope, $state){
     $scope.headerTitle = 'Add Alarm';
+
+    $scope.launchDatePicker =function(){
+        console.log("called launchDatePicker");
+        if($scope.alarmTime !== undefined){
+            var options = {
+                date: new Date($scope.alarmTime),
+                mode: 'time',
+                doneButtonColor: '#FFA24B',
+                cancelButtonColor: '#FFA24B'
+            };
+        }
+        else{
+            var options = {
+                date: new Date(),
+                mode: 'time',
+                doneButtonColor: '#FFA24B',
+                cancelButtonColor: '#FFA24B'
+            };
+        }
+        //used for being able to debug on web browser for styling purposes
+        var device = ionic.Platform.device();
+        if(device.platform === 'iOS' || device.platform === 'android'){
+            $scope.$watch(datePicker.show(options, function(time){
+                $scope.alarmTime = time; //might not need date object but just the time toLocaleTimeString()
+                $scope.$apply();
+            }));
+        }
+    };
+
+    $scope.leftButtons = [
+        {
+            type: 'button-clear',
+            content: 'Cancel',
+            tap: function(event){
+                $state.transitionTo('alarms');
+            }
+        }
+    ];
+    $scope.rightButtons = [
+        {
+            type: 'button-clear',
+            content: 'Save',
+            tap: function(e) {
+                alert('saved alarm');
+            }
+        }
+    ];
 })
 .controller('EditAlarmCtrl', function($scope){
 
