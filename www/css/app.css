@@ -54,10 +54,22 @@
     font-size:18px;
     color:grey;
 }
+
+.item.active:not(.item-divider):not(.item-input):not(.item-input-inset), .item-complex.active .item-content
+{
+    background-color:#fff;
+}
+
 .toggle input:checked + .track
 {
     background-color: #FFA24B;
     border-color: #FFA24B;
+}
+
+.alarm__input
+{
+    padding: 5px;
+    vertical-align: top;
 }
 
 .item-input-inline-flex{

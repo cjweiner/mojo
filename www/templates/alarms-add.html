@@ -1,5 +1,5 @@
 <ion-view title="'Add Alarm'">
-    <ion-header-bar title="headerTitle"
+    <ion-header-bar title={{headerTitle}}
                     animation="nav-title-slide-ios7"
                     type="bar-positive"
                     left-buttons="leftButtons"
@@ -12,21 +12,19 @@
                     <i class="icon ion-ios7-alarm"></i> Time:
                 </label>
                 <label class="col-center">
-                    {{alarmTime.toLocaleTimeString()}} 9:00 AM EDT
+                    {{alarmTime.toLocaleTimeString()}}
                 </label>
             </div>
         </div>
-        <div class="item" ng-model="">
+        <div class="item">
             <label class="title title-left">
                 <i class="icon ion-icecream"></i> Label:
             </label>
-            <div class="item item-input-wrapper item-input-inline-flex">
-                <label clas="item-input-wrapper">
-                    <input class="" type="text" ng-model="alarmName" placeholder="Alarm">
-                </label>
+            <div class="item item-input-inline-flex alarm__input">
+                <input class="item-input-inline-flex" type="text" ng-model="alarmName" placeholder="Alarm">
             </div>
         </div>
-        <div class="item" ng-click="" ng-model="">
+        <div class="item">
             <div class="">
                 <label class="title title-left">
                     <i class="icon ion-ios7-musical-notes"></i> Sound:
@@ -34,6 +32,7 @@
                 <span class="text-right">
                     Alarm
                 </span>
+                <i class="float-right icon ion-chevron-right" ng-click="openSongList()"></i>
             </div>
         </div>
     </ion-content>
